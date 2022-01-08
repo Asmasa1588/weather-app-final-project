@@ -166,17 +166,6 @@ function displayTemperature(response) {
     weatherAppContainer.classList.remove("clear-sky");
     weatherAppContainer.classList.remove("tornado");
     weatherAppContainer.classList.add("dust");
-  } else if (state === "Squall") {
-    // weatherAppContainer.classList.remove("base");
-    weatherAppContainer.classList.remove("snowy");
-    weatherAppContainer.classList.remove("clouds");
-    weatherAppContainer.classList.remove("dust");
-    weatherAppContainer.classList.remove("haze");
-    weatherAppContainer.classList.remove("thunderstorm");
-    weatherAppContainer.classList.remove("rainy");
-    weatherAppContainer.classList.remove("clear-sky");
-    weatherAppContainer.classList.remove("tornado");
-    weatherAppContainer.classList.add("stormy");
   } else if (state === "Tornado") {
     // weatherAppContainer.classList.remove("base");
     weatherAppContainer.classList.remove("snowy");

@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  color: darkgray;
+  color: black;
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
@@ -20,7 +20,8 @@ li {
   margin: 0;
   padding: 0;
 
-  color: rgb(135, 135, 135);
+  /* color: rgb(135, 135, 135); */
+  color: black;
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
@@ -37,7 +38,7 @@ li:first-letter {
 
 .weather-app {
   padding: 20px;
-  border: 4px solid lightgray;
+  border: 4px solid gray;
   border-radius: 15px;
 }
 
@@ -65,7 +66,8 @@ li:first-letter {
 }
 
 .weather-temperature .active {
-  color: rgb(33, 33, 33);
+  /* color: rgb(33, 33, 33); */
+  color: black;
   cursor: default;
 }
 
