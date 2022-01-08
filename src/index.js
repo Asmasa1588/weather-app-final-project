@@ -80,6 +80,116 @@ function getForecast(coordinates) {
 }
 
 function displayTemperature(response) {
+  let weatherAppContainer = document.getElementById("weather-app");
+  weatherAppContainer.classList.add("clouds");
+  let state = response.data.weather[0].main;
+  console.log({ response: response.data.weather[0] });
+  if (state === "Snow") {
+    //weatherAppContainer.classList.remove("base");
+    weatherAppContainer.classList.remove("clear-sky");
+    weatherAppContainer.classList.remove("clouds");
+    weatherAppContainer.classList.remove("dust");
+    weatherAppContainer.classList.remove("haze");
+    weatherAppContainer.classList.remove("rainy");
+    weatherAppContainer.classList.remove("stormy");
+    weatherAppContainer.classList.remove("thunderstorm");
+    weatherAppContainer.classList.remove("tornado");
+    weatherAppContainer.classList.add("snowy");
+  } else if (state === "Clear") {
+    // weatherAppContainer.classList.remove("base");
+    weatherAppContainer.classList.remove("snowy");
+    weatherAppContainer.classList.remove("clouds");
+    weatherAppContainer.classList.remove("dust");
+    weatherAppContainer.classList.remove("haze");
+    weatherAppContainer.classList.remove("rainy");
+    weatherAppContainer.classList.remove("stormy");
+    weatherAppContainer.classList.remove("thunderstorm");
+    weatherAppContainer.classList.remove("tornado");
+    weatherAppContainer.classList.add("clear-sky");
+  } else if (state === "Clouds") {
+    // weatherAppContainer.classList.remove("base");
+    weatherAppContainer.classList.remove("snowy");
+    weatherAppContainer.classList.remove("clear-sky");
+    weatherAppContainer.classList.remove("dust");
+    weatherAppContainer.classList.remove("haze");
+    weatherAppContainer.classList.remove("rainy");
+    weatherAppContainer.classList.remove("stormy");
+    weatherAppContainer.classList.remove("thunderstorm");
+    weatherAppContainer.classList.remove("tornado");
+    weatherAppContainer.classList.add("clouds");
+  } else if (state === "Thunderstorm") {
+    // weatherAppContainer.classList.remove("base");
+    weatherAppContainer.classList.remove("snowy");
+    weatherAppContainer.classList.remove("clouds");
+    weatherAppContainer.classList.remove("dust");
+    weatherAppContainer.classList.remove("haze");
+    weatherAppContainer.classList.remove("rainy");
+    weatherAppContainer.classList.remove("stormy");
+    weatherAppContainer.classList.remove("clear-sky");
+    weatherAppContainer.classList.remove("tornado");
+    weatherAppContainer.classList.add("thunderstorm");
+  } else if (state === "Drizzle" || state === "Rain") {
+    // weatherAppContainer.classList.remove("base");
+    weatherAppContainer.classList.remove("snowy");
+    weatherAppContainer.classList.remove("clouds");
+    weatherAppContainer.classList.remove("dust");
+    weatherAppContainer.classList.remove("haze");
+    weatherAppContainer.classList.remove("thunderstorm");
+    weatherAppContainer.classList.remove("storm");
+    weatherAppContainer.classList.remove("clearsky");
+    weatherAppContainer.classList.remove("tornado");
+    weatherAppContainer.classList.add("rainy");
+  } else if (state === "Mist" || state === "Haze" || state === "Fog") {
+    // weatherAppContainer.classList.remove("base");
+    weatherAppContainer.classList.remove("snowy");
+    weatherAppContainer.classList.remove("clouds");
+    weatherAppContainer.classList.remove("dust");
+    weatherAppContainer.classList.remove("rainy");
+    weatherAppContainer.classList.remove("thunderstorm");
+    weatherAppContainer.classList.remove("storm");
+    weatherAppContainer.classList.remove("clearsky");
+    weatherAppContainer.classList.remove("tornado");
+    weatherAppContainer.classList.add("haze");
+  } else if (
+    state === "Smoke" ||
+    state === "Dust" ||
+    state === "Sand" ||
+    state === "Ash"
+  ) {
+    // weatherAppContainer.classList.remove("base");
+    weatherAppContainer.classList.remove("snowy");
+    weatherAppContainer.classList.remove("clouds");
+    weatherAppContainer.classList.remove("rainy");
+    weatherAppContainer.classList.remove("haze");
+    weatherAppContainer.classList.remove("thunderstorm");
+    weatherAppContainer.classList.remove("stormy");
+    weatherAppContainer.classList.remove("clear-sky");
+    weatherAppContainer.classList.remove("tornado");
+    weatherAppContainer.classList.add("dust");
+  } else if (state === "Squall") {
+    // weatherAppContainer.classList.remove("base");
+    weatherAppContainer.classList.remove("snowy");
+    weatherAppContainer.classList.remove("clouds");
+    weatherAppContainer.classList.remove("dust");
+    weatherAppContainer.classList.remove("haze");
+    weatherAppContainer.classList.remove("thunderstorm");
+    weatherAppContainer.classList.remove("rainy");
+    weatherAppContainer.classList.remove("clear-sky");
+    weatherAppContainer.classList.remove("tornado");
+    weatherAppContainer.classList.add("stormy");
+  } else if (state === "Tornado") {
+    // weatherAppContainer.classList.remove("base");
+    weatherAppContainer.classList.remove("snowy");
+    weatherAppContainer.classList.remove("clouds");
+    weatherAppContainer.classList.remove("dust");
+    weatherAppContainer.classList.remove("haze");
+    weatherAppContainer.classList.remove("thunderstorm");
+    weatherAppContainer.classList.remove("stormy");
+    weatherAppContainer.classList.remove("clear-sky");
+    weatherAppContainer.classList.remove("rainy");
+    weatherAppContainer.classList.add("tornado");
+  }
+  console.log(response);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
@@ -137,119 +247,3 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 search("New York");
-
-
-
-let weatherState = document.getElementById("weatherApp");
-    let state = weather.data.weather[0].main;
-  //   if (state === "Snow") {
-  //     //weatherState.classList.remove("base");
-  //     weatherState.classList.remove("clear-sky");
-  //     weatherState.classList.remove("clouds");
-  //     weatherState.classList.remove("dust");
-  //     weatherState.classList.remove("haze");
-  //     weatherState.classList.remove("rainy");
-  //     weatherState.classList.remove("stormy");
-  //     weatherState.classList.remove("thunderstorm");
-  //     weatherState.classList.remove("tornado");
-  //     weatherState.classList.add("snowy");
-  //   } else if (state === "Clear") {
-  //     weatherState.classList.remove("base");
-  //     weatherState.classList.remove("snowy");
-  //     weatherState.classList.remove("clouds");
-  //     weatherState.classList.remove("dust");
-  //     weatherState.classList.remove("haze");
-  //     weatherState.classList.remove("rainy");
-  //     weatherState.classList.remove("stormy");
-  //     weatherState.classList.remove("thunderstorm");
-  //     weatherState.classList.remove("tornado");
-  //     weatherState.classList.add("clear-sky");
-  //   } else if (state === "Clouds") {
-  //     weatherState.classList.remove("base");
-  //     weatherState.classList.remove("snowy");
-  //     weatherState.classList.remove("clear-sky");
-  //     weatherState.classList.remove("dust");
-  //     weatherState.classList.remove("haze");
-  //     weatherState.classList.remove("rainy");
-  //     weatherState.classList.remove("stormy");
-  //     weatherState.classList.remove("thunderstorm");
-  //     weatherState.classList.remove("tornado");
-  //     weatherState.classList.add("clouds");
-  //   } else if (state === "Thunderstorm") {
-  //     weatherState.classList.remove("base");
-  //     weatherState.classList.remove("snowy");
-  //     weatherState.classList.remove("clouds");
-  //     weatherState.classList.remove("dust");
-  //     weatherState.classList.remove("haze");
-  //     weatherState.classList.remove("rainy");
-  //     weatherState.classList.remove("stormy");
-  //     weatherState.classList.remove("clear-sky");
-  //     weatherState.classList.remove("tornado");
-  //     weatherState.classList.add("thunderstorm");
-  //   } else if (state === "Drizzle" || state === "Rain") {
-  //     weatherState.classList.remove("base");
-  //     weatherState.classList.remove("snowy");
-  //     weatherState.classList.remove("clouds");
-  //     weatherState.classList.remove("dust");
-  //     weatherState.classList.remove("haze");
-  //     weatherState.classList.remove("thunderstorm");
-  //     weatherState.classList.remove("storm");
-  //     weatherState.classList.remove("clearsky");
-  //     weatherState.classList.remove("tornado");
-  //     weatherState.classList.add("rainy");
-  //   } else if (state === "Mist" || state === "Haze" || state === "Fog") {
-  //     weatherState.classList.remove("base");
-  //     weatherState.classList.remove("snowy");
-  //     weatherState.classList.remove("clouds");
-  //     weatherState.classList.remove("dust");
-  //     weatherState.classList.remove("rainy");
-  //     weatherState.classList.remove("thunderstorm");
-  //     weatherState.classList.remove("storm");
-  //     weatherState.classList.remove("clearsky");
-  //     weatherState.classList.remove("tornado");
-  //     weatherState.classList.add("haze");
-  //   } else if (
-  //     state === "Smoke" ||
-  //     state === "Dust" ||
-  //     state === "Sand" ||
-  //     state === "Ash"
-  //   ) {
-  //     weatherState.classList.remove("base");
-  //     weatherState.classList.remove("snowy");
-  //     weatherState.classList.remove("clouds");
-  //     weatherState.classList.remove("rainy");
-  //     weatherState.classList.remove("haze");
-  //     weatherState.classList.remove("thunderstorm");
-  //     weatherState.classList.remove("stormy");
-  //     weatherState.classList.remove("clear-sky");
-  //     weatherState.classList.remove("tornado");
-  //     weatherState.classList.add("dust");
-  //   } else if (state === "Squall") {
-  //     weatherState.classList.remove("base");
-  //     weatherState.classList.remove("snowy");
-  //     weatherState.classList.remove("clouds");
-  //     weatherState.classList.remove("dust");
-  //     weatherState.classList.remove("haze");
-  //     weatherState.classList.remove("thunderstorm");
-  //     weatherState.classList.remove("rainy");
-  //     weatherState.classList.remove("clear-sky");
-  //     weatherState.classList.remove("tornado");
-  //     weatherState.classList.add("stormy");
-  //   } else if (state === "Tornado") {
-  //     weatherState.classList.remove("base");
-  //     weatherState.classList.remove("snowy");
-  //     weatherState.classList.remove("clouds");
-  //     weatherState.classList.remove("dust");
-  //     weatherState.classList.remove("haze");
-  //     weatherState.classList.remove("thunderstorm");
-  //     weatherState.classList.remove("stormy");
-  //     weatherState.classList.remove("clear-sky");
-  //     weatherState.classList.remove("rainy");
-  //     weatherState.classList.add("tornado");
-  //   }
-  //   getForecast(weather.data.coord); //for forecast
-  // }
-
-
-
-
